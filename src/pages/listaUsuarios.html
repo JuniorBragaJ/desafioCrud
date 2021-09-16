@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud app</title>
+
+<style>
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(240, 240, 240);
+    height: 10vh;
+    margin-left: -8px;
+    margin-right: -8px;
+    margin-top: -8px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+}
+
+.header-txt {
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 3px 3px 10px white;
+}
+
+.header-btn-container {
+    background-color: white;
+    position: relative;
+    transform: translateX(-200%);
+    padding: 0.9rem;
+    border-radius: 1rem;
+}
+.header-btn {
+    color: black;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/*Second section */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.users-container {
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    width: 80vw;
+    height: 80vh;
+    margin: 2rem;
+}
+
+.users {
+    width: 80%;
+    margin: auto;
+}
+
+.users th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    text-align: left;
+    background-color: grey;
+    color: white;
+}
+.users tr{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    text-align: left;
+}
+.users td {
+    font-size: 22px;
+}
+</style>
+</head>
+
+
+<body>
+
+    <section class="header">
+            <div class="header-container">
+                <p class="header-txt">CRUD</p>
+            </div>
+            <div class="header-btn-container">
+                <a class="header-btn" href="/cadastro">Novo usuário</a>
+            </div>
+        </section>
+
+    <section class="main-container">
+        <div class="users-container">
+            <table class="users">
+                <tr>
+                    <th>Nome:</th>
+                    <th>E-mail:</th>
+                    <th>Idade:</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+
+                <% users.forEach((user, index) => {   %>
+                    <tr id="<%=index%>">
+                        <td> <%= user.name%> </td>
+                        <td> <%= user.email%> </td>
+                        <td> <%= user.age%> </td>
+                        <td> <input type="button" value="Editar" id="edit"> </td>
+                        <td> <input type="button" value="Apagar" id="remove" onclick="remove()"> </td>
+                    </tr>
+                <% }) %>
+
+            </table>
+        </div>
+    </section>
+</body>
+</html>

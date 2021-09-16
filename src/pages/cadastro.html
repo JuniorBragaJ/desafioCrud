@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+<style>
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(240, 240, 240);
+    height: 10vh;
+    margin-left: -8px;
+    margin-right: -8px;
+    margin-top: -8px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+}
+
+.header-txt {
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 3px 3px 10px white;
+}
+
+.header-btn-container {
+    background-color: white;
+    position: relative;
+    transform: translateX(-200%);
+    padding: 0.9rem;
+    border-radius: 1rem;
+}
+.header-btn {
+    color: black;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(240, 240, 240);
+    border-radius: 1rem;
+    width: 40vw;
+    height: 35vh;
+    margin-top: 22.5vh;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    justify-content: center;    
+}
+
+.register-form input {
+    margin-bottom: 15px;
+}
+
+.register-btn {
+    width: 50%;
+    height: 30px;
+    transform: translateX(50%);
+    background-color: rgb(240, 240, 240);
+    cursor: pointer;
+}
+    </style>
+</head>
+
+
+<body>
+    <section class="header">
+        <div class="header-container">
+            <p class="header-txt">CRUD</p>
+        </div>
+        <div class="header-btn-container">
+            <a class="header-btn" href="/">Voltar</a>
+        </div>
+    </section>
+
+    <section class="register">
+        <div class="register-container">
+            <form method="POST" action="/cadastro" class="register-form">
+                
+                    <label for="name">Nome:</label>
+                    <input type="text" name="name" id="name" maxlength="100" required>
+                
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" maxlength="100" required>
+                
+                    <label for="age">Idade</label>
+                    <input type="number" name="age" id="age" min="18" required>
+                
+                    <input type="submit" value="Cadastrar" class="register-btn">
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>
